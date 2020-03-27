@@ -273,20 +273,19 @@ void Update() {
     //std::cout << "reset counter"<< std:: endl;
     while (deltaTime >= FIXED_TIMESTEP) {
         // Update. Notice it's FIXED_TIMESTEP. Not deltaTime
+        state.player->Update(FIXED_TIMESTEP, state.player, state.platforms, PLATFORM_COUNT);
+        state.player->Update(FIXED_TIMESTEP, state.player, state.enemies, ENEMY_COUNT);
         for (int i = 0; i < ENEMY_COUNT; i ++){
-            state.player->Update(FIXED_TIMESTEP, state.player, state.enemies, ENEMY_COUNT);
+            state.enemies[i].Update(FIXED_TIMESTEP, state.player, state.platforms, PLATFORM_COUNT);
             if (state.player->collidedRight || state.player->collidedLeft || state.player->collidedTop){
                 state.player->isActive = false;
-                for (int i = 0; i < 9; i ++){
-                    state.gameOver[i].isActive = true;
-                    state.gameOver[i].Update(0, NULL, NULL, 0);
-                }
             }
-            else if (state.player->collidedBottom){
-                state.enemies[i].isActive = false;
+        }
+        if (state.player->isActive == false){
+            for (int i = 0; i < 9; i ++){
+                state.gameOver[i].isActive = true;
+                state.gameOver[i].Update(0, NULL, NULL, 0);
             }
-            state.enemies[i].Update(FIXED_TIMESTEP, state.player, state.platforms, PLATFORM_COUNT);
-
         }
         
         if (state.enemies[0].isActive == false && state.enemies[1].isActive == false && state.enemies[2].isActive == false){
@@ -300,9 +299,6 @@ void Update() {
             }
         }
         
-
-        
-        state.player->Update(FIXED_TIMESTEP, state.player, state.platforms, PLATFORM_COUNT);
         
         deltaTime -= FIXED_TIMESTEP;
     }

@@ -35,11 +35,17 @@ void Entity::CheckCollisionsY(Entity *objects, int objectCount)
                 position.y -= penetrationY;
                 velocity.y = 0;
                 collidedTop = true;
+                if (this->entityType == PLAYER && object->entityType == ENEMY){
+                    this->isActive = false;
+                }
             }
             else if (velocity.y < 0) {
                 position.y += penetrationY;
                 velocity.y = 0;
                 collidedBottom = true;
+                if (this->entityType == PLAYER && object->entityType == ENEMY){
+                    object->isActive = false;
+                }
             }
         }
     }
@@ -58,26 +64,24 @@ void Entity::CheckCollisionsX(Entity *objects, int objectCount)
                 position.x -= penetrationX;
                 velocity.x = 0;
                 collidedRight = true;
+                if (this->entityType == PLAYER && object->entityType == ENEMY){
+                    this->isActive = false;
+                }
+
             }
             else if (velocity.x < 0) {
                 position.x += penetrationX;
                 velocity.x = 0;
                 collidedLeft = true;
+                if (this->entityType == PLAYER && object->entityType == ENEMY){
+                    this->isActive = false;
+                }
             }
         }
     }
 }
 
 void Entity:: jumping(int y){
-    /*if (movement.y < 0 && position.y <= 1.5){
-        movement = glm::vec3(0, 1,  0);
-    }
-    else if (movement.y > 0 && position.y >= 2.5){
-        movement = glm::vec3(0, -1, 0);
-    }
-    else{
-        movement = glm::vec3(0, y, 0);
-    }*/
     if (position.y == 1.5) jump = true;
 }
 
@@ -171,7 +175,6 @@ void Entity::Update(float deltaTime, Entity *player, Entity *platforms, int plat
     
     position.x += velocity.x * deltaTime; // Move on X
     CheckCollisionsX(platforms, platformCount);// Fix if needed
-    
     
     modelMatrix = glm::mat4(1.0f);
     modelMatrix = glm::translate(modelMatrix, position);

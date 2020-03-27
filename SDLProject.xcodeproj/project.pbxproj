@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3A970F27240DFD620068813B /* george_0.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A970F26240DFD570068813B /* george_0.png */; };
 		3A970F2A240E049B0068813B /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A970F28240E049B0068813B /* Entity.cpp */; };
-		3A970F2C2411CB510068813B /* ctg.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A970F2B2411CB4C0068813B /* ctg.png */; };
 		3A970F2E2411E12B0068813B /* platformPack_tile001.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A970F2D2411E1250068813B /* platformPack_tile001.png */; };
 		3A970F40242B23E90068813B /* font1.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A970F3F242B23E00068813B /* font1.png */; };
 		3A970F42242C18BD0068813B /* enemy2.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A970F41242C18B60068813B /* enemy2.png */; };
@@ -34,7 +33,6 @@
 				DBDF1B612323DE9E007CECB1 /* shaders in CopyFiles */,
 				3A970F42242C18BD0068813B /* enemy2.png in CopyFiles */,
 				3A970F27240DFD620068813B /* george_0.png in CopyFiles */,
-				3A970F2C2411CB510068813B /* ctg.png in CopyFiles */,
 				3A970F2E2411E12B0068813B /* platformPack_tile001.png in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,7 +43,6 @@
 		3A970F26240DFD570068813B /* george_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = george_0.png; sourceTree = "<group>"; };
 		3A970F28240E049B0068813B /* Entity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
 		3A970F29240E049B0068813B /* Entity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
-		3A970F2B2411CB4C0068813B /* ctg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ctg.png; path = "../../school stuff/CS3113-master/Assets/2D Sprites/ctg.png"; sourceTree = "<group>"; };
 		3A970F2D2411E1250068813B /* platformPack_tile001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platformPack_tile001.png; sourceTree = "<group>"; };
 		3A970F3F242B23E00068813B /* font1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = font1.png; sourceTree = "<group>"; };
 		3A970F41242C18B60068813B /* enemy2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enemy2.png; sourceTree = "<group>"; };
@@ -101,7 +98,6 @@
 			children = (
 				3A970F26240DFD570068813B /* george_0.png */,
 				3A970F41242C18B60068813B /* enemy2.png */,
-				3A970F2B2411CB4C0068813B /* ctg.png */,
 				3A970F2D2411E1250068813B /* platformPack_tile001.png */,
 				3A970F3F242B23E00068813B /* font1.png */,
 				DBDF1B5B2323DE8D007CECB1 /* glm */,
